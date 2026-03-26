@@ -199,3 +199,7 @@ Example Data (JSON)
 ```
 # คำสั่ง Term Project
 ![Project](Project.jpg)
+- Write a program to store the data of all students in the class as a file.
+- Users can Add, Update, Find (search), and Delete. Users can search for persons by Name, Lastname, or Gender.
+- You have to create a data structure to store the data of each person, do not use a database engine or a built-in management engine.
+- The data of each person is Name, Lastname, Place of Birth, Gender, Telephone number, Emergency contact person, and telephone number.
