@@ -1,9 +1,13 @@
 # Student-management-system (Project)
-Student Management System using Python with add, search, delete, and file storage features
-# โครงสร้าง (data structure)
+Student Management System using Python with add, update, search, delete, and file storage features
+# โครงสร้าง (Data structure)
 Import
 ```python
 import json
+import os
+
+DATA_FILE = "students.json"
+students = []
 students = []
 ```
 กันข้อมูลซ้ำ
@@ -62,6 +66,49 @@ def add_student():
         print("Added!")
     else:
         print("This student already exists!")
+```
+ฟังชันก์แก้ไขข้อมูล (Update)
+```python
+def update_student():
+    name = input("Enter name to edit: ")
+    found = False
+
+    for s in students:
+        if s["name"] == name:
+            print("\nUpdate student:", s["name"], s["surname"])
+
+            new_sex = input(f"Sex ({s['sex']}): ")
+            new_name = input(f"Name ({s['name']}): ")
+            new_surname = input(f"Surname ({s['surname']}): ")
+            new_birthplace = input(f"Birthplace ({s['birthplace']}): ")
+            new_phone = input(f"Phone ({s['phone']}): ")
+            new_emergency_name = input(f"Emergency Name ({s['emergency_name']}): ")
+            new_emergency_phone = input(f"Emergency Phone ({s['emergency_phone']}): ")
+            new_pets = input(f"Pets ({s['pets']}): ")
+
+            if new_sex:
+                s["sex"] = new_sex
+            if new_name:
+                s["name"] = new_name
+            if new_surname:
+                s["surname"] = new_surname
+            if new_birthplace:
+                s["birthplace"] = new_birthplace
+            if new_phone:
+                s["phone"] = new_phone
+            if new_emergency_name:
+                s["emergency_name"] = new_emergency_name
+            if new_emergency_phone:
+                s["emergency_phone"] = new_emergency_phone
+            if new_pets:
+                s["pets"] = new_pets
+
+            print("Updated!")
+            found = True
+            break
+
+    if not found:
+        print("Not found")
 ```
 ฟังก์ชันค้นหา (Search)
 ```python
@@ -122,12 +169,14 @@ while True:
     if choice == "1":
         add_student()
     elif choice == "2":
-        search_student()
+        update_student()
     elif choice == "3":
-        delete_student()
+        search_student()
     elif choice == "4":
-        show_all()
+        delete_student()
     elif choice == "5":
+        show_all()
+    elif choice == "6":
         save_to_file()
         break
     else:
