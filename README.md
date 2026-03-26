@@ -182,3 +182,20 @@ while True:
     else:
         print("Invalid choice")
 ```
+Example Data (JSON)
+```python
+[
+  {
+    "name": "Jean",
+    "surname": "Butdeemee",
+    "sex": "Female",
+    "birthplace": "Khon Kaen",
+    "phone": "0621214391",
+    "emergency_name": "Jingjo",
+    "emergency_phone": "0922766255",
+    "pets": "Dog and cat"
+  }
+]
+```
+# คำสั่ง Term Project
+![Project](Project.jpg)
